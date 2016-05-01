@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ben-scully/dishout/issues"
   },
-  "homepage": "https://github.com/ben-scully/dishout#readme"
+  "homepage": "https://github.com/ben-scully/dishout#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
