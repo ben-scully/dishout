@@ -2,9 +2,9 @@
   "name": "dishout",
   "version": "1.0.0",
   "description": "allocating dishes for guests to bring",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "start": "index.html",
+    "start": "server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
