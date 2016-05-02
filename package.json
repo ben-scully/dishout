@@ -4,7 +4,7 @@
   "description": "allocating dishes for guests to bring",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "babel-node --presets es2015 ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/ben-scully/dishout#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "babel-cli": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0"
   }
 }
