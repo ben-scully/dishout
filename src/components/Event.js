@@ -1,10 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import EventCourse from './EventCourse'
 
 class Event extends React.Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className="event">
@@ -16,24 +14,27 @@ class Event extends React.Component {
         </div>
         <div className="dishes">
           <div className="dish">
-            <div>Meal</div>
-            <div>Person</div>
-            <div>Choice</div>
+            <div>Course</div>
+            <div>Who</div>
+            <div>What</div>
           </div>
-          <div className="dish">
-            <div>Starters</div>
-            <div>Kieu</div>
-            <div>Cheese & Crackers</div>
-          </div>
-          <div className="dish">
-            <div>Main</div>
-            <div>Ross</div>
-            <div>Spaghetti</div>
-          </div>
+          <EventCourse course={this.props.courses.get(0)}/>
         </div>
       </div>
     )
   }
 }
 
-export default Event
+const mapStateToProps = (state) => {
+  return {
+		event: state.reducers.get("events").get(0),
+    courses: state.reducers.get("events").get(0).courses
+	}
+}
+
+export default connect (
+	mapStateToProps,
+	null
+)(Event)
+
+export { Event }

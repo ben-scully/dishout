@@ -20,17 +20,13 @@ class EventListings extends React.Component {
       </div>
     )}}
 
-EventListings.contextTypes = {
-	store: React.PropTypes.object
-}
-
 const mapStateToProps = (state) => {
   return {
 		events: state.reducers.get("events")
 	}
 }
 
-export default connect(
+export default connect (
 	mapStateToProps,
 	null
 )(EventListings)

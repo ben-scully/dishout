@@ -25,7 +25,7 @@ class EventCreate extends React.Component {
         <input ref="time" type="text" id="time" />
         <label htmlFor="description">Enter event description:</label>
         <input ref="description" type="text" id="description" />
-        <button onClick={() => this.addEvent()}>Create Event</button>
+        <button onClick={ () => this.addEvent() }>Create Event</button>
       </div>
     )
   }
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
 	}
 }
 
-export default connect(
+export default connect (
 	null,
 	mapDispatchToProps
 )(EventCreate)

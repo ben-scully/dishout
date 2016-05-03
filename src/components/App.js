@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 import EventListings from './EventListings'
+import Event from './Event'
 
 class App extends React.Component {
-
 	render () {
 		return (
 			<div className='wrapper'>
@@ -11,7 +11,7 @@ class App extends React.Component {
 					<h1>DishOut Site</h1>
 				</div>
 				<EventListings />
-
+				<Event />
 				<div className='content'>
 					{this.props.children}
 				</div>
