@@ -1,12 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import EventListing from './EventListing'
 import EventCreate from './EventCreate'
 
 class EventListings extends React.Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <div className="eventListings">
@@ -21,8 +18,21 @@ class EventListings extends React.Component {
           <EventListing key={evt.id} event={evt} />
         )}
       </div>
-    )
-  }
+    )}}
+
+EventListings.contextTypes = {
+	store: React.PropTypes.object
 }
 
-export default EventListings
+const mapStateToProps = (state) => {
+  return {
+		events: state.reducers.get("events")
+	}
+}
+
+export default connect(
+	mapStateToProps,
+	null
+)(EventListings)
+
+export { EventListings }

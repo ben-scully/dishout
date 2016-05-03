@@ -2,54 +2,54 @@
   "name": "dishout",
   "version": "1.0.0",
   "description": "allocating dishes for guests to bring",
-  "main": "js/script.js",
+  "main": "",
   "scripts": {
-    "starting": "budo . -d --serve bundle.js --live",
-    "sassing": "sass --watch sass/style.sass:public/index.css",
-    "start": "babel-node --presets es2015 ./server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors --history-api-fallback",
+    "build": "webpack --config webpack-production.config.js --progress --colors",
+    "lint": "eslint src && echo \"eslint: no lint errors\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ben-scully/dishout.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ben Scully",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ben-scully/dishout/issues"
   },
   "homepage": "https://github.com/ben-scully/dishout#readme",
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react", "es2015"
-    ]
-  },
   "dependencies": {
-    "babel-core": "*",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0",
-    "babelify": "^7.2.0",
-    "browserify": "^13.0.0",
+    "autoprefixer": "^6.3.6",
     "babel-cli": "^6.0.0",
     "babel-core": "^6.7.7",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.0.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
     "budo": "^8.2.2",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "immutable": "^3.8.1",
     "postcss-loader": "^0.9.1",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.0",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0"
+    "svg-loader": "0.0.2",
+    "transfer-webpack-plugin": "^0.1.4",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
     "node-sass": "^3.6.0"
