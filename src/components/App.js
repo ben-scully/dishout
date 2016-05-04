@@ -7,14 +7,9 @@ class App extends React.Component {
 	render () {
 		return (
 			<div className='wrapper'>
-				<div className="navbar">
-					<h1>DishOut Site</h1>
-				</div>
+				<h1>DishOut Site</h1>
 				<EventListings />
 				<Event />
-				<div className='content'>
-					{this.props.children}
-				</div>
 			</div>
 		)
 	}

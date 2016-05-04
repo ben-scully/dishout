@@ -9,7 +9,7 @@ class EventCreate extends React.Component {
       name: this.refs.name.value,
       date: this.refs.date.value,
       time: this.refs.time.value,
-      description: this.refs.description.value
+      description: this.refs.desc.value
     }
     this.props.addEvent(newEvent)
   }
@@ -23,8 +23,8 @@ class EventCreate extends React.Component {
         <input ref="date" type="text" id="date" />
         <label htmlFor="time">Enter event time:</label>
         <input ref="time" type="text" id="time" />
-        <label htmlFor="description">Enter event description:</label>
-        <input ref="description" type="text" id="description" />
+        <label htmlFor="desc">Enter event description:</label>
+        <input ref="desc" type="text" id="desc" />
         <button onClick={ () => this.addEvent() }>Create Event</button>
       </div>
     )

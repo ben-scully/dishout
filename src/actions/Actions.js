@@ -1,3 +1,5 @@
+import Immutable from 'immutable'
+
 export default function addEvent (newEvent) {
 	return {
 		type: 'ADD_EVENT',
@@ -10,7 +12,7 @@ export function stateAfterAddEvent (state, newEvent) {
 	newEvent.id = nextID
 	return state.updateIn(
 		['events'],
-		evtList => evtList.push( newEvent )
+		evtMap => evtMap.set( nextID, newEvent )
 	)
 }
 
@@ -22,15 +24,21 @@ export function allocateDish (userAllocation) {
 }
 
 export function stateAfterAllocateDish (state, userAllocation) {
-	console.log("AlloDish - before: ", state)
-	console.log("AlloDish - action: ", userAllocation)
 	const userID = userAllocation.userID
 	const eventID = userAllocation.eventID
 	const courseID = userAllocation.courseID
-	let nextState = state.get('events').get(0).courses
-	console.log("AlloDish - next: ", nextState)
+	const changedState = state.updateIn(
+		['courses', courseID.toString()],
+		x => {x.course = "sam"
+					return x})
+	console.log( Immutable.is(state, changedState) )
+	console.log("compare: ", state.get('courses').get("200"), changedState.get('courses').get("200"))
+	return {}
 }
 
-// return state.updateIn(
-// 	['events'],
-// 	evtList => evtList.push( newEvent )
+
+
+// const changedState = state.updateIn(
+// 	['courses', courseID.toString()],
+// 	x => {x.course = "sam"
+// 				return x})

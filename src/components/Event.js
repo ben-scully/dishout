@@ -10,7 +10,7 @@ class Event extends React.Component {
           <div>{this.props.event.name}</div>
           <div>{this.props.event.date}</div>
           <div>{this.props.event.time}</div>
-          <div>{this.props.event.description}</div>
+          <div>{this.props.event.desc}</div>
         </div>
         <div className="dishes">
           <div className="dish">
@@ -18,7 +18,11 @@ class Event extends React.Component {
             <div>Who</div>
             <div>What</div>
           </div>
-          <EventCourse course={this.props.courses.get(0)}/>
+          {this.props.courses.map( course => {
+            if (this.props.event.id === course.eventID)
+              return <EventCourse key={course.id} course={course} />
+            }
+          )}
         </div>
       </div>
     )
@@ -27,8 +31,8 @@ class Event extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-		event: state.reducers.get("events").get(0),
-    courses: state.reducers.get("events").get(0).courses
+		event: state.reducers.get("events").get("100"),
+    courses: state.reducers.get("courses")
 	}
 }
 

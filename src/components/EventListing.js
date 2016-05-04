@@ -11,7 +11,7 @@ class EventListing extends React.Component {
         <div>{this.props.event.name}</div>
         <div>{this.props.event.date}</div>
         <div>{this.props.event.time}</div>
-        <div>{this.props.event.description}</div>
+        <div>{this.props.event.desc}</div>
       </div>
     )
   }

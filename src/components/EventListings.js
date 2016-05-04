@@ -22,7 +22,10 @@ class EventListings extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-		events: state.reducers.get("events")
+		events: state.reducers.get('events'),
+    courses: state.reducers.get('courses'),
+    users: state.reducers.get('users'),
+    currentUser: state.reducers.get('currentUser'),
 	}
 }
 

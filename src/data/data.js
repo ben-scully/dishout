@@ -1,36 +1,40 @@
 import Immutable from 'immutable'
 
-const courses1 = Immutable.List([
-  {course: "starter", who: "Kieu", whoID: 100, what: "Paua"},
-  {course: "main"},
-  {course: "desert", who: "Sammie", whoID: 101, what: "Chocolate"}
-])
+const users = Immutable.Map({
+  300: {id: 300, name: "Picasso"},
+  301: {id: 301, name: "Leonardo"},
+  302: {id: 302, name: "Donatello"}
+})
 
-const courses2 = Immutable.List([
-  {course: "starter"},
-  {course: "main", who: "Pete", whoID: 100, what: "Roast Chicken"},
-  {course: "desert"}
-])
+const courses = Immutable.Map({
+  200: {id: 200, eventID: 100, course: "Starter", userID: 0, what: ""},
+  201: {id: 201, eventID: 100, course: "Main", userID: 301, what: ""},
+  202: {id: 202, eventID: 100, course: "Desert", userID: 0, what: "Chocolate"},
+  203: {id: 203, eventID: 200, course: "Starter", userID: 0, what: ""},
+  204: {id: 204, eventID: 200, course: "Main", userID: 300, what: "Roast Chicken"},
+  205: {id: 205, eventID: 200, course:"Desert", userID: 0, what: ""}
+})
 
-const sampleEvents = Immutable.List([
-  {
-    id: 1,
+const events = Immutable.Map({
+  100: {
+    id: 100,
     name: "Sunday Potluck",
     date: "20th April",
     time: "7pm",
-    description: "potty lucky",
-    courses: courses1
+    desc: "potty lucky"
   },
-  {
-    id: 2,
+  101: {
+    id: 101,
     name: "Saturday Catan",
     date: "3rd may",
     time: "8pm",
-    description: "cataning",
-    courses: courses2
+    desc: "cataning"
   }
-])
+})
 
 export default Immutable.Map({
-	events: sampleEvents
+	events: events,
+  courses: courses,
+  currentUser: users.get("300"),
+  users: users
 })
